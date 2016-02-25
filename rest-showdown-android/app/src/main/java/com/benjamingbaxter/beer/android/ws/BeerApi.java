@@ -8,6 +8,7 @@ import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Header;
 import retrofit.http.Headers;
+import retrofit.http.Path;
 import rx.Observable;
 
 public interface BeerApi {
@@ -16,6 +17,9 @@ public interface BeerApi {
 
     @GET("beers")
     List<Beer> beer();
+
+    @GET("beers/{id}")
+    Beer beer(@Path("id") int id);
 
     @GET("beers")
     Call<List<Beer>> beerAsync();
